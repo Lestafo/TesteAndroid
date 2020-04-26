@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ExampleApp</string>
+    <string name="edit_message">Digite sua mensagem</string>
+    <string name="button_send">Enviar</string>
+    <string name="tav">Atividade que mostra</string>
+</resources>
