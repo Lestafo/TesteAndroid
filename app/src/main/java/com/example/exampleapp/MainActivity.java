@@ -8,9 +8,10 @@ import android.view.Display;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  {
     public static final String EXTRA_MESSAGE = "com.example.exampleapp.MESSAGE";
     private ViewHolder nViewHolder = new ViewHolder();
 
@@ -35,7 +36,11 @@ public class MainActivity extends AppCompatActivity {
         Button butao;
     }
 
+    public void clique(View view){
+        Toast.makeText(this,"AAA",Toast.LENGTH_LONG).show();
+    }
     public void sendMessage(View view){
+
         Intent intent = new Intent(this, DisplayMessageActivity.class);
         EditText editText = nViewHolder.editValue;
         String message = editText.getText().toString();
