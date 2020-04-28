@@ -1,6 +1,7 @@
 package com.example.exampleapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,10 +19,12 @@ public class MainActivity extends AppCompatActivity  {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        this.nViewHolder.editValue = findViewById(R.id.editText);
-        this.nViewHolder.butao = findViewById(R.id.button);
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        this.nViewHolder.butao = findViewById(R.id.button);
+        this.nViewHolder.editValue = findViewById(R.id.editText);
         /*this.nViewHolder.butao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -36,13 +39,11 @@ public class MainActivity extends AppCompatActivity  {
         Button butao;
     }
 
-    public void clique(View view){
-        Toast.makeText(this,"AAA",Toast.LENGTH_LONG).show();
-    }
+
     public void sendMessage(View view){
 
         Intent intent = new Intent(this, DisplayMessageActivity.class);
-        EditText editText = nViewHolder.editValue;
+        EditText editText = this.nViewHolder.editValue;
         String message = editText.getText().toString();
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
