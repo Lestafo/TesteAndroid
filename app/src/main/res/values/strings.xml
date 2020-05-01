@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">DeitelTwitter</string>
+    <string name="missingMessage">\"que\"</string>
+    <string name="OK">ok</string>
+    <string name="searchURL">http://mobile.twitter.com/search/</string>
+    <string name="cancel">CANCELA PROA</string>
+    <string name="shareEditDeleteTitle">vtmc</string>
 </resources>
