@@ -123,4 +123,38 @@ public class MainActivity extends ListActivity {
             adapter.notifyDataSetChanged();
         }
     }
+    private void shareSearch(String tag){
+        String urlString = getString(R.string.searchURL)+Uri.encode(savedSearches.getString(tag,""),"UTF-8");
+
+        Intent shareIntent = new Intent();
+        shareIntent.setAction(Intent.ACTION_SEND);
+        shareIntent.putExtra(Intent.EXTRA_SUBJECT,getString(R.string.shareSubject));
+        shareIntent.putExtra(Intent.EXTRA_TEXT,getString(R.string.shareMessage, urlString));
+        shareIntent.setType("text/plain");
+
+        startActivity(Intent.createChooser(shareIntent,getString(R.string.shareSearch)));
+    }
+    private void deleteSearch(final String tag){
+        AlertDialog.Builder confirmBuilder = new AlertDialog.Builder(this);
+        confirmBuilder.setMessage(getString(R.string.confirmMessage,tag));
+        confirmBuilder.setNegativeButton(getString(R.string.cancel), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+        confirmBuilder.setPositiveButton(getString(R.string.delete), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                tags.remove(tag);
+                SharedPreferences.Editor preferencesEditor = savedSearches.edit();
+                preferencesEditor.remove(tag);
+                preferencesEditor.apply();
+                adapter.notifyDataSetChanged();
+            }
+        });
+        confirmBuilder.create().show();
+
+
+    }
 }

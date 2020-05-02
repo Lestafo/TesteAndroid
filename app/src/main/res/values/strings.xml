@@ -4,5 +4,14 @@
     <string name="OK">ok</string>
     <string name="searchURL">http://mobile.twitter.com/search/</string>
     <string name="cancel">CANCELA PROA</string>
-    <string name="shareEditDeleteTitle">vtmc</string>
+    <string name="shareEditDeleteTitle">Share, Edit or Delete the search tagged as \"%s\"</string>
+    <string name="shareSearch">share search to:</string>
+    <string name="shareMessage">results: %s</string>
+    <string name="shareSubject">search that might interest</string>
+    <string-array name="dialog_items"><item>share</item>
+        <item>edit</item>
+        <item>delete</item>
+    </string-array>
+    <string name="confirmMessage">want to delete \\\"%s\\\" ?</string>
+    <string name="delete">delete</string>
 </resources>
